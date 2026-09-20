@@ -3,7 +3,8 @@ PLAN: "feat: webtyp/tokenizer — byte-level BPE for granite-embedding-97m-multi
 TAG: v0.1.0
 EXECUTOR: jules
 REVIEWER: none
-REPO: webtyp/tokenizer
+STATUS: running
+SESSION: 6379221482996001613
 ---
 
 > This plan is dispatched via the CodeJob workflow. See skill: agents-workflow.
