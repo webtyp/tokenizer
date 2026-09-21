@@ -53,3 +53,26 @@ func encodeBytes(bs []byte) string {
 	}
 	return string(runes)
 }
+
+// ByteLevelScheme is granite-embedding-97m-multilingual-r2's pretokenizer: the reference
+// regex (pretokenize.go) plus GPT-2 byte-level encode/decode.
+type ByteLevelScheme struct{}
+
+func (ByteLevelScheme) Pretokenize(text string) []string {
+	return pretokenize(text)
+}
+
+func (ByteLevelScheme) ByteFallbackSymbol(b byte) (string, bool) {
+	return "", false
+}
+
+func (ByteLevelScheme) DecodeToken(dst []byte, tok string) []byte {
+	for _, r := range tok {
+		if b, ok := runeToByte(r); ok {
+			dst = append(dst, b)
+		} else {
+			dst = append(dst, []byte(string(r))...)
+		}
+	}
+	return dst
+}
