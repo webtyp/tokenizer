@@ -1,0 +1,295 @@
+[
+  {
+    "input": "Hola mundo",
+    "want": [
+      "Hola",
+      "Ġmundo"
+    ]
+  },
+  {
+    "input": "hello's hello'll hello've hello're hello'm hello'd hello't",
+    "want": [
+      "hello's",
+      "Ġhello'll",
+      "Ġhello've",
+      "Ġhello're",
+      "Ġhello'm",
+      "Ġhello'd",
+      "Ġhello't"
+    ]
+  },
+  {
+    "input": "HELLO'S HELLO'LL",
+    "want": [
+      "HELLO'S",
+      "ĠHELLO'LL"
+    ]
+  },
+  {
+    "input": "1234567890",
+    "want": [
+      "123",
+      "456",
+      "789",
+      "0"
+    ]
+  },
+  {
+    "input": "test 1.2.3",
+    "want": [
+      "test",
+      "Ġ",
+      "1",
+      ".",
+      "2",
+      ".",
+      "3"
+    ]
+  },
+  {
+    "input": "foo  bar",
+    "want": [
+      "foo",
+      "Ġ",
+      "Ġbar"
+    ]
+  },
+  {
+    "input": "foo   bar",
+    "want": [
+      "foo",
+      "ĠĠ",
+      "Ġbar"
+    ]
+  },
+  {
+    "input": "foo\nbar",
+    "want": [
+      "foo",
+      "Ċ",
+      "bar"
+    ]
+  },
+  {
+    "input": "   ",
+    "want": [
+      "ĠĠĠ"
+    ]
+  },
+  {
+    "input": "  a  ",
+    "want": [
+      "Ġ",
+      "Ġa",
+      "ĠĠ"
+    ]
+  },
+  {
+    "input": "!@#$",
+    "want": [
+      "!@#$"
+    ]
+  },
+  {
+    "input": " !@#$",
+    "want": [
+      "Ġ!@#$"
+    ]
+  },
+  {
+    "input": "hello/world",
+    "want": [
+      "hello",
+      "/world"
+    ]
+  },
+  {
+    "input": "   \n\r  foo",
+    "want": [
+      "ĠĠĠĊč",
+      "Ġ",
+      "Ġfoo"
+    ]
+  },
+  {
+    "input": "Texto en español con acentos: canción, Ramón, NIÑO.",
+    "want": [
+      "Texto",
+      "Ġen",
+      "ĠespaÃ±ol",
+      "Ġcon",
+      "Ġacentos",
+      ":",
+      "ĠcanciÃ³n",
+      ",",
+      "ĠRamÃ³n",
+      ",",
+      "ĠNIÃĳO",
+      "."
+    ]
+  },
+  {
+    "input": "Oración con números 1234567890 y 00 dólares.",
+    "want": [
+      "OraciÃ³n",
+      "Ġcon",
+      "ĠnÃºmeros",
+      "Ġ",
+      "123",
+      "456",
+      "789",
+      "0",
+      "Ġy",
+      "Ġ",
+      "00",
+      "ĠdÃ³lares",
+      "."
+    ]
+  },
+  {
+    "input": "Puntuación: ¿Hola, mundo! ¿Cómo estás? (Test 1.2.3)...",
+    "want": [
+      "PuntuaciÃ³n",
+      ":",
+      "ĠÂ¿",
+      "Hola",
+      ",",
+      "Ġmundo",
+      "!",
+      "ĠÂ¿",
+      "CÃ³mo",
+      "ĠestÃ¡s",
+      "?",
+      "Ġ(",
+      "Test",
+      "Ġ",
+      "1",
+      ".",
+      "2",
+      ".",
+      "3",
+      ")..."
+    ]
+  },
+  {
+    "input": "Espacios   múltiples  y   tabs\t\ty\nsaltos de línea.",
+    "want": [
+      "Espacios",
+      "ĠĠ",
+      "ĠmÃºltiples",
+      "Ġ",
+      "Ġy",
+      "ĠĠ",
+      "Ġtabs",
+      "ĉ",
+      "ĉy",
+      "Ċ",
+      "saltos",
+      "Ġde",
+      "ĠlÃŃnea",
+      "."
+    ]
+  },
+  {
+    "input": "a",
+    "want": [
+      "a"
+    ]
+  },
+  {
+    "input": " ",
+    "want": [
+      "Ġ"
+    ]
+  },
+  {
+    "input": "  ",
+    "want": [
+      "ĠĠ"
+    ]
+  },
+  {
+    "input": "\n",
+    "want": [
+      "Ċ"
+    ]
+  },
+  {
+    "input": "\r\n",
+    "want": [
+      "čĊ"
+    ]
+  },
+  {
+    "input": "a b c d e f g",
+    "want": [
+      "a",
+      "Ġb",
+      "Ġc",
+      "Ġd",
+      "Ġe",
+      "Ġf",
+      "Ġg"
+    ]
+  },
+  {
+    "input": "1 2 3 4 5 6 7 8 9 0",
+    "want": [
+      "1",
+      "Ġ",
+      "2",
+      "Ġ",
+      "3",
+      "Ġ",
+      "4",
+      "Ġ",
+      "5",
+      "Ġ",
+      "6",
+      "Ġ",
+      "7",
+      "Ġ",
+      "8",
+      "Ġ",
+      "9",
+      "Ġ",
+      "0"
+    ]
+  },
+  {
+    "input": "Hello World!",
+    "want": [
+      "Hello",
+      "ĠWorld",
+      "!"
+    ]
+  },
+  {
+    "input": "Foo-Bar_Baz",
+    "want": [
+      "Foo",
+      "-Bar",
+      "_Baz"
+    ]
+  },
+  {
+    "input": "test@example.com",
+    "want": [
+      "test",
+      "@example",
+      ".com"
+    ]
+  },
+  {
+    "input": "https://webtyp.com/path?arg=val",
+    "want": [
+      "https",
+      "://",
+      "webtyp",
+      ".com",
+      "/path",
+      "?arg",
+      "=val"
+    ]
+  }
+]
