@@ -63,42 +63,45 @@ func matchNextToken(runes []rune, i, n int) int {
 
 func matchAlt12(runes []rune, i, n int) int {
 	curr := i
-	hasPrefix := false
 	if curr < n {
 		r := runes[curr]
 		if !isCRLF(r) && !isLetter(r) && !isNumber(r) {
-			hasPrefix = true
 			curr++
 		}
 	}
-
 	j := curr
-	uCount := 0
-	for j+uCount < n && isUpperLike(runes[j+uCount]) {
-		uCount++
+
+	// maxX = longest run of X-class runes (Lu, Lt, Lm, Lo, M) starting at j.
+	maxX := 0
+	for j+maxX < n && isUpperLike(runes[j+maxX]) {
+		maxX++
 	}
 
-	k := j + uCount
-	lCount := 0
-	for k+lCount < n && isLowerLike(runes[k+lCount]) {
-		lCount++
+	// Alt1: X*Y+, tried first, greedy-then-backtrack. Find the LARGEST prefixLen in
+	// [0, maxX] such that the rune right after it is Y-class (Ll, Lm, Lo, M) — that is
+	// exactly what a backtracking regex engine converges on for X*Y+.
+	for prefixLen := maxX; prefixLen >= 0; prefixLen-- {
+		pos := j + prefixLen
+		if pos < n && isLowerLike(runes[pos]) {
+			yCount := 0
+			for pos+yCount < n && isLowerLike(runes[pos+yCount]) {
+				yCount++
+			}
+			matchedLen := (j - i) + prefixLen + yCount
+			matchedLen += matchContraction(runes, i+matchedLen, n)
+			return matchedLen
+		}
 	}
 
-	// Check Alt 1: uCount >= 0, lCount >= 1
-	if lCount >= 1 {
-		matchedLen := (j - i) + uCount + lCount
+	// Alt2: X+Y* — only reached when Alt1 found no Y-class rune anywhere in [j, j+maxX].
+	// That means the Y* trailing part is necessarily empty too (same position was checked
+	// and failed), so the match is exactly the X run.
+	if maxX >= 1 {
+		matchedLen := (j - i) + maxX
 		matchedLen += matchContraction(runes, i+matchedLen, n)
 		return matchedLen
 	}
 
-	// Check Alt 2: uCount >= 1, lCount >= 0
-	if uCount >= 1 {
-		matchedLen := (j - i) + uCount + lCount
-		matchedLen += matchContraction(runes, i+matchedLen, n)
-		return matchedLen
-	}
-
-	_ = hasPrefix
 	return 0
 }
 
