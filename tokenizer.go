@@ -118,14 +118,20 @@ func (t *BPE) encodePretoken(dst []int32, pt string) []int32 {
 			symbols = append(symbols, s)
 			continue
 		}
-		fellBack := false
-		for _, b := range []byte(s) {
-			if sym, ok := t.scheme.ByteFallbackSymbol(b); ok {
-				symbols = append(symbols, sym)
-				fellBack = true
+		raw := []byte(s)
+		fallback := make([]string, 0, len(raw))
+		allFellBack := true
+		for _, b := range raw {
+			sym, ok := t.scheme.ByteFallbackSymbol(b)
+			if !ok {
+				allFellBack = false
+				break
 			}
+			fallback = append(fallback, sym)
 		}
-		if !fellBack {
+		if allFellBack {
+			symbols = append(symbols, fallback...)
+		} else {
 			symbols = append(symbols, s)
 		}
 	}
