@@ -1,4 +1,5 @@
 # tokenizer
+<img src="docs/img/badges.svg">
 
 byte-level BPE tokenizer for `granite-embedding-97m-multilingual-r2`: text in, token ids out.
 
