@@ -1,7 +1,5 @@
 package tokenizer
 
-import "sort"
-
 // composeLatin performs NFC normalization restricted to Latin letters using the nfcLatin table.
 // If text contains no combining mark in U+0300–U+036F, it returns text unchanged without allocations.
 func composeLatin(text string) string {
@@ -46,15 +44,21 @@ func composeLatin(text string) string {
 	return string(out)
 }
 
+// lookupNFCLatin binary-searches nfcLatin, which is sorted by (base, mark). Hand-written: the
+// sort package is a size tax under TinyGo.
 func lookupNFCLatin(base, mark rune) (rune, bool) {
-	idx := sort.Search(len(nfcLatin), func(i int) bool {
-		if nfcLatin[i][0] != base {
-			return nfcLatin[i][0] >= base
+	lo, hi := 0, len(nfcLatin)
+	for lo < hi {
+		mid := (lo + hi) / 2
+		e := nfcLatin[mid]
+		if e[0] < base || (e[0] == base && e[1] < mark) {
+			lo = mid + 1
+		} else {
+			hi = mid
 		}
-		return nfcLatin[i][1] >= mark
-	})
-	if idx < len(nfcLatin) && nfcLatin[idx][0] == base && nfcLatin[idx][1] == mark {
-		return nfcLatin[idx][2], true
+	}
+	if lo < len(nfcLatin) && nfcLatin[lo][0] == base && nfcLatin[lo][1] == mark {
+		return nfcLatin[lo][2], true
 	}
 	return 0, false
 }
