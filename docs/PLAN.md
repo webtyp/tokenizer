@@ -3,6 +3,8 @@ PLAN: "feat: QwenScheme — Qwen3.5 pre-tokenizer (NFC + regex split + byte leve
 TAG: v0.3.0
 EXECUTOR: jules
 REVIEWER: none
+STATUS: running
+SESSION: 6089302139946885702
 ---
 
 > This plan is dispatched via the CodeJob workflow. See skill: agents-workflow.
