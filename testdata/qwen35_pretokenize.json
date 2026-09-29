@@ -1,0 +1,460 @@
+[
+ {
+  "text": "Hola mundo",
+  "normalized": "Hola mundo",
+  "pretokens": [
+   "Hola",
+   "Ġmundo"
+  ],
+  "ids": [
+   65717,
+   27429
+  ]
+ },
+ {
+  "text": "¿A qué hora abren los lunes?",
+  "normalized": "¿A qué hora abren los lunes?",
+  "pretokens": [
+   "Â¿A",
+   "ĠquÃ©",
+   "Ġhora",
+   "Ġabren",
+   "Ġlos",
+   "Ġlunes",
+   "?"
+  ],
+  "ids": [
+   29197,
+   32,
+   40883,
+   32991,
+   650,
+   1388,
+   2398,
+   176565,
+   30
+  ]
+ },
+ {
+  "text": "Señor Muñoz — ítem “café orgánico” ¿1.250 €? ¡Sí!",
+  "normalized": "Señor Muñoz — ítem “café orgánico” ¿1.250 €? ¡Sí!",
+  "pretokens": [
+   "SeÃ±or",
+   "ĠMuÃ±oz",
+   "ĠâĢĶ",
+   "ĠÃŃtem",
+   "ĠâĢľ",
+   "cafÃ©",
+   "ĠorgÃ¡nico",
+   "âĢĿ",
+   "ĠÂ¿",
+   "1",
+   ".",
+   "2",
+   "5",
+   "0",
+   "ĠâĤ¬?",
+   "ĠÂ¡",
+   "SÃŃ",
+   "!"
+  ],
+  "ids": [
+   1460,
+   5476,
+   269,
+   229724,
+   1892,
+   38804,
+   844,
+   1001,
+   895,
+   56868,
+   1198,
+   184590,
+   828,
+   27368,
+   16,
+   13,
+   17,
+   20,
+   15,
+   12612,
+   30,
+   47180,
+   220645,
+   0
+  ]
+ },
+ {
+  "text": "é decomposed é",
+  "normalized": "é decomposed é",
+  "pretokens": [
+   "Ã©",
+   "Ġdecomposed",
+   "ĠÃ©"
+  ],
+  "ids": [
+   933,
+   27572,
+   3736,
+   3825
+  ]
+ },
+ {
+  "text": "ñ and Ñ",
+  "normalized": "ñ and Ñ",
+  "pretokens": [
+   "Ã±",
+   "Ġand",
+   "ĠÃĳ"
+  ],
+  "ids": [
+   5476,
+   321,
+   1624,
+   239
+  ]
+ },
+ {
+  "text": "I'm here, they've gone, it's OK",
+  "normalized": "I'm here, they've gone, it's OK",
+  "pretokens": [
+   "I",
+   "'m",
+   "Ġhere",
+   ",",
+   "Ġthey",
+   "'ve",
+   "Ġgone",
+   ",",
+   "Ġit",
+   "'s",
+   "ĠOK"
+  ],
+  "ids": [
+   40,
+   2688,
+   1532,
+   11,
+   781,
+   2908,
+   7795,
+   11,
+   424,
+   579,
+   10092
+  ]
+ },
+ {
+  "text": "DON'T SHOUT",
+  "normalized": "DON'T SHOUT",
+  "pretokens": [
+   "DON",
+   "'T",
+   "ĠSHOUT"
+  ],
+  "ids": [
+   81720,
+   16813,
+   6232,
+   3531
+  ]
+ },
+ {
+  "text": "x=12345; y = 3.14159",
+  "normalized": "x=12345; y = 3.14159",
+  "pretokens": [
+   "x",
+   "=",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   ";",
+   "Ġy",
+   "Ġ=",
+   "Ġ",
+   "3",
+   ".",
+   "1",
+   "4",
+   "1",
+   "5",
+   "9"
+  ],
+  "ids": [
+   87,
+   28,
+   16,
+   17,
+   18,
+   19,
+   20,
+   26,
+   374,
+   283,
+   220,
+   18,
+   13,
+   16,
+   19,
+   16,
+   20,
+   24
+  ]
+ },
+ {
+  "text": "  leading spaces",
+  "normalized": "  leading spaces",
+  "pretokens": [
+   "Ġ",
+   "Ġleading",
+   "Ġspaces"
+  ],
+  "ids": [
+   220,
+   6187,
+   12258
+  ]
+ },
+ {
+  "text": "trailing spaces   ",
+  "normalized": "trailing spaces   ",
+  "pretokens": [
+   "trailing",
+   "Ġspaces",
+   "ĠĠĠ"
+  ],
+  "ids": [
+   371,
+   13868,
+   12258,
+   262
+  ]
+ },
+ {
+  "text": "tabs\tand\nnewlines\n\n\nend",
+  "normalized": "tabs\tand\nnewlines\n\n\nend",
+  "pretokens": [
+   "tabs",
+   "ĉand",
+   "Ċ",
+   "newlines",
+   "ĊĊĊ",
+   "end"
+  ],
+  "ids": [
+   29975,
+   50711,
+   198,
+   902,
+   7718,
+   1358,
+   400
+  ]
+ },
+ {
+  "text": "emoji 😀 ok",
+  "normalized": "emoji 😀 ok",
+  "pretokens": [
+   "emoji",
+   "ĠðŁĺĢ",
+   "Ġok"
+  ],
+  "ids": [
+   36280,
+   87209,
+   5226
+  ]
+ },
+ {
+  "text": "日本語のテキスト",
+  "normalized": "日本語のテキスト",
+  "pretokens": [
+   "æĹ¥æľ¬èªŀãģ®ãĥĨãĤŃãĤ¹ãĥĪ"
+  ],
+  "ids": [
+   247359,
+   15303,
+   210342
+  ]
+ },
+ {
+  "text": "code: func main() { fmt.Println(\"hi\") }",
+  "normalized": "code: func main() { fmt.Println(\"hi\") }",
+  "pretokens": [
+   "code",
+   ":",
+   "Ġfunc",
+   "Ġmain",
+   "()",
+   "Ġ{",
+   "Ġfmt",
+   ".Println",
+   "(\"",
+   "hi",
+   "\")",
+   "Ġ}"
+  ],
+  "ids": [
+   1787,
+   25,
+   2821,
+   1822,
+   363,
+   313,
+   8611,
+   12063,
+   437,
+   5834,
+   871,
+   333
+  ]
+ },
+ {
+  "text": "a\r\nb\rc",
+  "normalized": "a\r\nb\rc",
+  "pretokens": [
+   "a",
+   "čĊ",
+   "b",
+   "č",
+   "c"
+  ],
+  "ids": [
+   64,
+   317,
+   65,
+   201,
+   66
+  ]
+ },
+ {
+  "text": "<tool_call>\n<function=clinic_hours>\n<parameter=day>\nlunes\n</parameter>\n</function>\n</tool_call>",
+  "normalized": "<tool_call>\n<function=clinic_hours>\n<parameter=day>\nlunes\n</parameter>\n</function>\n</tool_call>",
+  "pretokens": [
+   "<tool",
+   "_call",
+   ">Ċ",
+   "<function",
+   "=clinic",
+   "_hours",
+   ">Ċ",
+   "<parameter",
+   "=day",
+   ">Ċ",
+   "lunes",
+   "Ċ",
+   "</",
+   "parameter",
+   ">Ċ",
+   "</",
+   "function",
+   ">Ċ",
+   "</",
+   "tool",
+   "_call",
+   ">"
+  ],
+  "ids": [
+   248058,
+   198,
+   27,
+   1628,
+   28,
+   86192,
+   40003,
+   29,
+   198,
+   27,
+   15704,
+   28,
+   1247,
+   29,
+   198,
+   75,
+   8269,
+   198,
+   510,
+   15704,
+   29,
+   198,
+   510,
+   1628,
+   29,
+   198,
+   248059
+  ]
+ },
+ {
+  "text": "",
+  "normalized": "",
+  "pretokens": [],
+  "ids": []
+ },
+ {
+  "text": " ",
+  "normalized": " ",
+  "pretokens": [
+   "Ġ"
+  ],
+  "ids": [
+   220
+  ]
+ },
+ {
+  "text": "123abc456",
+  "normalized": "123abc456",
+  "pretokens": [
+   "1",
+   "2",
+   "3",
+   "abc",
+   "4",
+   "5",
+   "6"
+  ],
+  "ids": [
+   16,
+   17,
+   18,
+   13290,
+   19,
+   20,
+   21
+  ]
+ },
+ {
+  "text": "¡¡¡!!!",
+  "normalized": "¡¡¡!!!",
+  "pretokens": [
+   "Â¡Â¡Â¡!!!"
+  ],
+  "ids": [
+   38511,
+   38511,
+   38511,
+   11726
+  ]
+ },
+ {
+  "text": "C'est déjà l'été",
+  "normalized": "C'est déjà l'été",
+  "pretokens": [
+   "C",
+   "'est",
+   "ĠdÃ©jÃł",
+   "Ġl",
+   "'Ã©tÃ©"
+  ],
+  "ids": [
+   34,
+   16811,
+   44311,
+   324,
+   6,
+   37500
+  ]
+ }
+]
