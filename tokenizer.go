@@ -90,13 +90,17 @@ func New(cfg Config) (*BPE, error) {
 // Encode converts text into token IDs, prefixed with BOS and suffixed with EOS.
 func (t *BPE) Encode(dst []int32, text string) []int32 {
 	dst = append(dst, t.bosTokenID)
+	dst = t.EncodeOrdinary(dst, text)
+	dst = append(dst, t.eosTokenID)
+	return dst
+}
 
+// EncodeOrdinary converts text into token ids with no special tokens around it.
+func (t *BPE) EncodeOrdinary(dst []int32, text string) []int32 {
 	pretokens := t.scheme.Pretokenize(text)
 	for _, pt := range pretokens {
 		dst = t.encodePretoken(dst, pt)
 	}
-
-	dst = append(dst, t.eosTokenID)
 	return dst
 }
 
