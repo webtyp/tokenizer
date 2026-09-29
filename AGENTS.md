@@ -40,6 +40,7 @@ tinygo build -target wasm -o /dev/null .
 | `fmt`, `errors`, `strconv`, `strings` | `webtyp.com/fmt` |
 | `encoding/json`, `net/http`, `context` (stdlib), `os`, `log` | nothing here needs them |
 | `regexp` | a hand-written scanner (see `docs/PLAN.md` — the reference pretokenizer regex uses a negative lookahead RE2 can't run anyway) |
+| `golang.org/x/text` | restricted hand-written normalization (e.g. `nfc.go` for Latin NFC) |
 | `syscall/js` | this package never touches the DOM |
 | `map[K]V` | a sorted slice + `sort.Search` (binary search) — see `docs/PLAN.md` for why a linear scan over 180k vocab entries is the wrong call here |
 

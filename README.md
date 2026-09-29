@@ -15,3 +15,9 @@ byte-level BPE tokenizer for `granite-embedding-97m-multilingual-r2`: text in, t
 
 - `map[K]V` in shipped code: **None** (uses sorted slices + binary search lookup).
 - Prohibited stdlib imports (`fmt`, `errors`, `regexp`, `strings`): **None** (zero dependencies outside `unicode` stdlib).
+
+## Schemes
+
+- **`ByteLevelScheme`**: Granite models (pretokenizer regex + GPT-2 byte mapping).
+- **`MetaspaceScheme`**: Bekko models (SentencePiece metaspace `▁` + byte fallback).
+- **`QwenScheme`**: Qwen3.5 models (NFC restricted to Latin script + Qwen3.5 regex split + GPT-2 byte mapping).
