@@ -13,4 +13,7 @@ type Scheme interface {
 	ByteFallbackSymbol(b byte) (symbol string, ok bool)
 	// DecodeToken appends tok's raw bytes to dst.
 	DecodeToken(dst []byte, tok string) []byte
+	// IgnoreMerges reports whether a pretoken that is itself a vocabulary entry is emitted as that
+	// entry without running the merges: the "ignore_merges" field of the model's tokenizer.json.
+	IgnoreMerges() bool
 }

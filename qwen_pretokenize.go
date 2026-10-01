@@ -39,6 +39,10 @@ func (QwenScheme) DecodeToken(dst []byte, tok string) []byte {
 	return ByteLevelScheme{}.DecodeToken(dst, tok)
 }
 
+func (QwenScheme) IgnoreMerges() bool {
+	return false
+}
+
 func matchQwenNextToken(runes []rune, i, n int) int {
 	// Alt 1: Contraction
 	// (?i:'s|'t|'re|'ve|'m|'ll|'d)
