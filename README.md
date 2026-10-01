@@ -25,6 +25,16 @@ byte-level BPE tokenizer for `granite-embedding-97m-multilingual-r2`: text in, t
 
 A scheme says whether it may skip merges (`IgnoreMerges`), as the model's tokenizer.json does.
 
+## Streaming generated text
+
+A byte-level token can end in the middle of a UTF-8 character. `Stream` holds that tail back:
+
+```go
+var s tokenizer.Stream
+chunk := s.Write(scheme.DecodeToken(nil, vocab[id])) // "" while a character is incomplete
+// … at the end: s.Flush(); s.Text() is the whole answer
+```
+
 ## Loading a model's tokenizer
 
 `webtyp/weightsc` writes the vocabulary into the `.wtypw` artifact and the merges into a companion
