@@ -24,3 +24,16 @@ byte-level BPE tokenizer for `granite-embedding-97m-multilingual-r2`: text in, t
 - **`Lfm2Scheme`**: LFM2 models (LiquidAI LFM2.5 pretokenizer regex + GPT-2 byte mapping).
 
 A scheme says whether it may skip merges (`IgnoreMerges`), as the model's tokenizer.json does.
+
+## Loading a model's tokenizer
+
+`webtyp/weightsc` writes the vocabulary into the `.wtypw` artifact and the merges into a companion
+`.merges` file. `ParseMerges` turns that file into `Config.Merges`:
+
+```go
+bpe, err := tokenizer.New(tokenizer.Config{
+	Scheme: tokenizer.Lfm2Scheme{},
+	Vocab:  artifact.Tokenizer.Vocab,
+	Merges: tokenizer.ParseMerges(mergesFile),
+})
+```
