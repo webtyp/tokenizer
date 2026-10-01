@@ -59,6 +59,10 @@ func (MetaspaceScheme) DecodeToken(dst []byte, tok string) []byte {
 	return dst
 }
 
+func (MetaspaceScheme) IgnoreMerges() bool {
+	return false
+}
+
 func parseByteFallbackToken(tok string) (byte, bool) {
 	if len(tok) != 6 || tok[0] != '<' || tok[1] != '0' || tok[2] != 'x' || tok[5] != '>' {
 		return 0, false

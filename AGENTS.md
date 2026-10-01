@@ -58,8 +58,7 @@ repository, would be a second copy of the same data, larger and easier to get wr
   ground truth — never hand-guessed expected ids.
 - **`normalizer` is `null`.** No lowercasing, no accent stripping, no NFKC. Don't add any of
   them "for robustness" — it changes every token id downstream.
-- **`ignore_merges: true` is not optional.** Skipping it doesn't break correctness by much but
-  makes every common word run the full merge loop — implement the whole-word vocab shortcut.
+- **`ignore_merges` is a property of each model:** true for granite-embedding, false for bekko, Qwen3.5 and LFM2. A false value must run every merge, or typed control tokens (LFM2) and some words (Qwen) get the wrong ids.
 - **`add_prefix_space` matters for the first pretoken of a string.** Verify it against
   `tokenizer.json` rather than assuming true or false.
 

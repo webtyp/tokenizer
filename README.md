@@ -21,3 +21,6 @@ byte-level BPE tokenizer for `granite-embedding-97m-multilingual-r2`: text in, t
 - **`ByteLevelScheme`**: Granite models (pretokenizer regex + GPT-2 byte mapping).
 - **`MetaspaceScheme`**: Bekko models (SentencePiece metaspace `▁` + byte fallback).
 - **`QwenScheme`**: Qwen3.5 models (NFC restricted to Latin script + Qwen3.5 regex split + GPT-2 byte mapping).
+- **`Lfm2Scheme`**: LFM2 models (LiquidAI LFM2.5 pretokenizer regex + GPT-2 byte mapping).
+
+A scheme says whether it may skip merges (`IgnoreMerges`), as the model's tokenizer.json does.

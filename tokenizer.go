@@ -106,8 +106,10 @@ func (t *BPE) EncodeOrdinary(dst []int32, text string) []int32 {
 
 func (t *BPE) encodePretoken(dst []int32, pt string) []int32 {
 	// ignore_merges: true optimization
-	if id, ok := t.lookupVocab(pt); ok {
-		return append(dst, id)
+	if t.scheme.IgnoreMerges() {
+		if id, ok := t.lookupVocab(pt); ok {
+			return append(dst, id)
+		}
 	}
 
 	runes := []rune(pt)

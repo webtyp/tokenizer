@@ -100,6 +100,29 @@ func TestQwen_Normalize(t *testing.T) {
 	}
 }
 
+func TestQwen_EncodeOrdinaryMatchesReference(t *testing.T) {
+	bpe := loadQwenBPE(t)
+	data, err := os.ReadFile("testdata/qwen35_ordinary.json")
+	if err != nil {
+		t.Fatalf("failed to read testdata/qwen35_ordinary.json: %v", err)
+	}
+	var cases []qwenTestCase
+	if err := json.Unmarshal(data, &cases); err != nil {
+		t.Fatalf("failed to unmarshal qwen35_ordinary.json: %v", err)
+	}
+
+	for i, tc := range cases {
+		got := bpe.EncodeOrdinary(nil, tc.Text)
+		want := tc.IDs
+		if len(got) == 0 && len(want) == 0 {
+			continue
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("case %d (%q):\n got:  %v\n want: %v", i, tc.Text, got, want)
+		}
+	}
+}
+
 func TestQwen_Pretokenize(t *testing.T) {
 	scheme := QwenScheme{}
 	cases := loadQwenCases(t)

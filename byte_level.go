@@ -76,3 +76,7 @@ func (ByteLevelScheme) DecodeToken(dst []byte, tok string) []byte {
 	}
 	return dst
 }
+
+func (ByteLevelScheme) IgnoreMerges() bool {
+	return true
+}
