@@ -3,6 +3,8 @@ PLAN: "feat!: Lfm2Scheme for LFM2 models; schemes declare IgnoreMerges (Qwen, be
 TAG: v0.4.0
 EXECUTOR: jules
 REVIEWER: none
+STATUS: running
+SESSION: 785318238893929255
 ---
 
 > This plan is dispatched via the CodeJob workflow. See skill: agents-workflow.
